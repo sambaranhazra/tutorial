@@ -51,9 +51,3 @@
         acc))
     (empty coll)
     coll))
-
-(our-filter (fn [map-elem]
-              (if (= (key map-elem) "Sambaran")
-                true
-                false))
-            {:name "Sambaran"})

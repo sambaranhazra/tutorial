@@ -1,10 +1,10 @@
 (ns tutorial.fundamentals
-  (:require [clojure.string :as s]))
+  (:require [clojure.string :as s]
+            [clojure.java.io :as io]))
 
 (println "Hello"
          (+ 2 3)
-         "\n"
-         (slurp "D:\\projects\\clojure_projects\\tutorial\\src\\tutorial\\core.clj"))
+         "\n"(slurp (io/resource "names.txt")))
 
 \tab
 
@@ -38,4 +38,4 @@
   (loop [n num r 1N]
     (if (<= n 1) r (recur (dec n) (* n r)))))
 (def names
-  (s/split (slurp "D:\\projects\\clojure_projects\\tutorial\\resources\\names.txt") #"\r\n"))
+  (s/split (slurp (io/resource "names.txt")) #"\r\n"))
